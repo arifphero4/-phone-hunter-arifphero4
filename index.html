@@ -14,8 +14,43 @@
     />
   </head>
   <body>
-    <h2 class="text-center my-5 text-primary">assignment - 6</h2>
-    <h1 class="text-center text-success">Welcome to Phone Hunter</h1>
+    <header>
+      <h1 class="text-primary text-center mt-5">Welcome to Book Archive</h1>
+    </header>
+
+    <main>
+      <!-- Input Box -->
+      <section class="w-50 mx-auto">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search Book Name"
+            id="input-field"
+          />
+          <div class="input-group-append">
+            <button
+              id="search-button"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </section>
+      <!------------- Total Result ----------->
+      <h3 id="total-result" class="d-flex justify-content-center mb-3"></h3>
+
+      <!-- Error Message -->
+      <div id="error-message" class="d-flex justify-content-center"></div>
+
+      <!------- books cards section start --------->
+      <div
+        id="book-container"
+        class="container row row-cols-1 row-cols-md-3 text-center g-4 mx-auto"
+      ></div>
+    </main>
 
     <!-- bootstrap js script file  -->
     <script
