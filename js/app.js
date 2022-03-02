@@ -7,7 +7,6 @@ const searchItem = () => {
   inputField = inputFieldItem.value.toLowerCase();
   // call to spinner
   setSpinner("block");
-
   const url = `https://openapi.programming-hero.com/api/phones?search=${inputField}`;
   // clear input field
   inputFieldItem.value = "";
@@ -16,7 +15,7 @@ const searchItem = () => {
     .then((res) => res.json())
     .then((data) => displayResult(data.data));
 };
-// displayReault function call for show result
+// displayResult called for show result
 const displayResult = (phone) => {
   const displayResultDiv = document.getElementById("details-div");
   displayResultDiv.innerHTML = "";
@@ -25,12 +24,10 @@ const displayResult = (phone) => {
   if (phone.length !== 0) {
     phone.slice(1, 21).forEach(
       (show = (phone) => {
-        // console.log(phone)
-        // create div for showing result
         const phoneDetailsDiv = document.createElement("div");
         // set result dynamic
         phoneDetailsDiv.innerHTML = `
-                 <div class="card rounded">
+                 <div class="card rounded  ">
                  <img src="${phone.image}" class="card-img-top p-2 m-auto img-fluid w-25" alt="...">
                  <div class="card-body text-center">
                  <h4 class="card-title">${phone.phone_name}</h4>
@@ -38,8 +35,7 @@ const displayResult = (phone) => {
                  <button onclick="showDetails('${phone.slug}')" class=" btn btn-success" >About Phone </button>
                 </div>
                 </div>`;
-        // console.log(phone.slug);
-        //    append the div into main div
+
         displayResultDiv.appendChild(phoneDetailsDiv);
       })
     );
