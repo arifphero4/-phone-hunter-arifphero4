@@ -1,9 +1,9 @@
 const setSpinner = (spinnerValue) => {
-  document.getElementById("spinner").style.display = spinnerValue;
+  document.getElementById("load-spinner").style.display = spinnerValue;
 };
 // search button function create
 const searchItem = () => {
-  const inputFieldItem = document.getElementById("input");
+  const inputFieldItem = document.getElementById("input-text");
   showField = inputFieldItem.value.toLowerCase();
   // call to spinner
   setSpinner("block");
@@ -47,7 +47,7 @@ const displayResult = (phone) => {
     );
     setSpinner("none");
   } else {
-    hTag.innerText = "no result found";
+    hTag.innerText = "NO RESULT FOUND!";
     setSpinner("none");
   }
 };
@@ -96,7 +96,7 @@ const displayMoreInformation = (detailsInformation) => {
   </div>`;
   detailsShowDiv.appendChild(detailsInformationShow);
 };
-document.getElementById("clearDiv").addEventListener(
+document.getElementById("clear-result").addEventListener(
   "click",
   (clearFunction = () => {
     const div = document.getElementById("details-show");

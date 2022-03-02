@@ -13,16 +13,7 @@
       crossorigin="anonymous"
     />
     <!-- custom css  -->
-    <style>
-      body {
-        background: #e5e5e6;
-      }
-      #spinner {
-        color: rgb(85, 79, 79);
-        padding-left: 500px;
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header>
@@ -30,29 +21,34 @@
     </header>
     <main>
       <!-- input field and button added  -->
-      <div class="container" id="mainDiv">
+      <div class="container">
         <div class="input-group mb-0 w-50 m-auto">
           <input
-            id="input"
+            id="input-text"
             type="text"
-            class="form-control"
-            placeholder="Phone"
+            class="form-control text-center mx-2"
+            placeholder="search phone by brand name"
             aria-label="search phone"
             aria-describedby="basic-addon2"
           />
           <button
             onclick="searchItem()"
-            id="clearDiv"
-            class="m-auto btn btn-dark"
+            id="clear-result"
+            class="m-auto btn btn-success px-3"
             type="button"
           >
             Search
           </button>
         </div>
-        <div id="spinner">
-          <h6>loading....</h6>
+        <!-- spinner  -->
+        <div id="load-spinner">
+          <div class="text-center my-3">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
         </div>
-        <h6 id="result-massage" class="text-center text-light"></h6>
+        <h6 id="result-massage" class="text-center text-danger my-3"></h6>
         <!-- result showing div  -->
         <div id="details-show"></div>
         <div

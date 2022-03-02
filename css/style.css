@@ -1,0 +1,7 @@
+body {
+    background: #e5e5e6;
+  }
+  #load-spinner {
+    color: rgb(21, 135, 211);
+    display: none;
+  }
