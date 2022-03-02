@@ -12,44 +12,54 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- custom css  -->
+    <style>
+      body {
+        background: #e5e5e6;
+      }
+      #spinner {
+        color: rgb(85, 79, 79);
+        padding-left: 500px;
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <h1 class="text-primary text-center mt-5">Welcome to Book Archive</h1>
+      <h1 class="text-center mt-5">Welcome to Grabe your Gadget</h1>
     </header>
-
     <main>
-      <!-- Input Box -->
-      <section class="w-50 mx-auto">
-        <div class="input-group mb-3">
+      <!-- input field and button added  -->
+      <div class="container" id="mainDiv">
+        <div class="input-group mb-0 w-50 m-auto">
           <input
+            id="input"
             type="text"
             class="form-control"
-            placeholder="Search Book Name"
-            id="input-field"
+            placeholder="Phone"
+            aria-label="search phone"
+            aria-describedby="basic-addon2"
           />
-          <div class="input-group-append">
-            <button
-              id="search-button"
-              class="btn btn-outline-secondary"
-              type="button"
-            >
-              Search
-            </button>
-          </div>
+          <button
+            onclick="searchItem()"
+            id="clearDiv"
+            class="m-auto btn btn-dark"
+            type="button"
+          >
+            Search
+          </button>
         </div>
-      </section>
-      <!------------- Total Result ----------->
-      <h3 id="total-result" class="d-flex justify-content-center mb-3"></h3>
-
-      <!-- Error Message -->
-      <div id="error-message" class="d-flex justify-content-center"></div>
-
-      <!------- books cards section start --------->
-      <div
-        id="book-container"
-        class="container row row-cols-1 row-cols-md-3 text-center g-4 mx-auto"
-      ></div>
+        <div id="spinner">
+          <h6>loading....</h6>
+        </div>
+        <h6 id="result-massage" class="text-center text-light"></h6>
+        <!-- result showing div  -->
+        <div id="details-show"></div>
+        <div
+          id="displayDiv"
+          class="mt-3 row row-cols-1 row-cols-md-3 g-4"
+        ></div>
+      </div>
     </main>
 
     <!-- bootstrap js script file  -->
